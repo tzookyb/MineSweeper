@@ -280,7 +280,7 @@ function flagCell(cellI, cellJ, event, elCell) {
 
 function undoMove(undoArray) {
     if (!gUndo) return;
-    if (!gGame.isOn && gGame.lives === 0) {
+    if (!gGame.isOn) {
         say('You can only undo while you are still alive', 2);
         return;
     }
