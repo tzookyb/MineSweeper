@@ -371,6 +371,7 @@ function checkVictory() {
         new Audio('audio/victory.mp3').play();
         clearInterval(gGameTimeInterval);
         gGame.isOn = false;
+        gUndo = [];
         gAnnounce.classList.add('victory');
         say('Pheeew, you made it, alive!', 4);
         gSmiley.src = 'img/cool.png';
