@@ -4,6 +4,7 @@ var gAnnounceTimeout;
 var gAnnounce = document.querySelector('.announce');
 var gFlashScreen = document.querySelector('.flash');
 var gSmiley = document.querySelector('.smiley img');
+var gModal = document.querySelector('.modal');
 var gUndo;
 var gEmptyCells;
 var gBoard;
@@ -85,6 +86,17 @@ function initGame(level) {
             renderBoard();
             break;
         case 4:
+            // Modal Implementation
+            // SIZE
+            // gModal.style.display = 'block';
+            // gModal.innerHTML = `<label for="rows">How many rows would like to have in the board?<br/>
+            // <input type="number" id="rows" placeholder="2 or bigger"><br/>
+            // <button onclick="getInput("rows","gLevel.SIZE")>Continue</button>`;
+            // MINES
+            // gModal.innerHTML = `Enter how many mines would like to have on the board:<br/>
+            // <input id="mines" placeholder="Between 1 and ${gLevel.SIZE ** 2 - 1}"<br/>
+            // <button onclick="gLevelSIZE = document.getElementById("rows").value id="btn">Continue</button>`;
+
             gSelectedLevel = 4;
             while (isNaN(gLevel.SIZE) || gLevel.SIZE < 2) {
                 gLevel.SIZE = parseInt(+prompt('Type in how many rows in the board?'));
@@ -102,6 +114,12 @@ function initGame(level) {
             break;
     }
 }
+
+function getInput(id, variable) {
+    console.log('doing');
+    variable = document.getElementById(id);
+    console.log(gLevel.SIZE);
+};
 
 function manualPlaceMines(cellI, cellJ, elCell) {
     if (gBoard[cellI][cellJ].isMine) {
@@ -280,7 +298,7 @@ function flagCell(cellI, cellJ, event, elCell) {
 
 function undoMove(undoArray) {
     if (!gUndo) return;
-    if (!gGame.isOn) {
+    if (!gGame.isOn && gGame.lives === 0) {
         say('You can only undo while you are still alive', 2);
         return;
     }
