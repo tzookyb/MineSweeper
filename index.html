@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineSweeper</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="flash"><button class="begin" onclick="removeFlash()">Enter the mine field</button></div>
+    <div class="header">MineSweeper</div>
+    <div class="main-container">
+        <div class="control-panel">
+            <div class="control-top">
+                <div class="leftside">
+                    <div class="hint"><img onclick="useHint()" width="60px" height="60px" src="img/hintoff.png" /><div class="hintcounter"></div></div>
+                    <div class="hint"><img onclick="safeClick()" width="50px" height="50px" src="img/safe.png" /><div class="safecounter"></div></div>
+                    <div class="smiley"><img onclick="initGame(gSelectedLevel)" style="display:block" width="70px"
+                            height="70px" src="img/scared.png" /></div>
+                </div>
+                <div class="middle">
+                    <button onclick="initGame(1)">Beginner</button>
+                    <button onclick="initGame(2)">Medium</button>
+                    <button onclick="initGame(3)">Expert</button>
+                    <button onclick="initGame(4)">Manual Mode</button>
+                    <div class="lives"></div>
+                </div>
+                <div class="rightside">
+                    <div class="time">Time:<br />0<br />Seconds</div><br />
+                    <div class="flagcounter"></div>
+                    <button onclick="undoMove(gUndo)">Oopsi...</button>
+                </div>
+            </div>
+            <div class="control-bottom">
+                <div class="announce">To begin - choose game level</div>
+            </div>
+        </div>
+        <div class="gamecontainer">
+            <table>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>Coffeeright Idan Benjamin &copy 2020</footer>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

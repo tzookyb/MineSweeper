@@ -1,0 +1,336 @@
+body {
+    margin: 0;
+    text-align: center;
+    background-color: darkslategrey;
+    font-family: 'Staatliches', cursive;
+    user-select: none;
+}
+
+.flash {
+    position: absolute;
+    background-color: black;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.flash button {
+    font-family: 'Staatliches', cursive;
+    position: relative;
+    border-top: 0px;
+    width: 500px;
+    padding: 50px;
+    font-size: xx-large;
+    outline: none;
+    transition: 1.5s;
+    box-shadow: 0px -5px 8px 9px gold;
+}
+
+.on {
+    animation: flash 10s 0s forwards;
+}
+
+@keyframes flash {
+    0% {
+        background-color: black;
+        opacity: 1;
+        z-index: 2;
+    }
+    100% {
+        background-color: transparent;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+.blast {
+    animation: blast 1s 0s forwards;
+}
+
+@keyframes blast {
+    0% {
+        background-color: red;
+        opacity: 1;
+        z-index: 2;
+    }
+    100% {
+        background-color: transparent;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+.header {
+    background-color: darkslategrey;
+    font-size: 50px;
+    animation: letter_explode 5s 9s forwards;
+}
+
+.gameover {
+    animation: gameover 1s 0s forwards;
+}
+
+.victory {
+    animation: victory 1s 0s forwards;
+}
+
+@keyframes letter_explode {
+    0% {
+        letter-spacing: 0.0em;
+        opacity: 1;
+    }
+    50% {
+        letter-spacing: 0.5em;
+        opacity: 0;
+        transform: rotateX(180deg);
+    }
+    100% {
+        letter-spacing: 0.2em;
+        opacity: 1;
+    }
+}
+
+@keyframes victory {
+    0% {
+        letter-spacing: 0.0em;
+        opacity: 1;
+    }
+    50% {
+        letter-spacing: 0.2em;
+        opacity: 0.5;
+        transform: rotateX(180deg);
+    }
+    100% {
+        letter-spacing: 0.1em;
+        color: green;
+        opacity: 1;
+    }
+}
+
+@keyframes gameover {
+    0% {
+        letter-spacing: 0.0em;
+        opacity: 1;
+    }
+    50% {
+        letter-spacing: 0.2em;
+        opacity: 0.5;
+        color: red;
+    }
+    100% {
+        letter-spacing: 0em;
+        opacity: 1;
+    }
+}
+
+.main-container {
+    background: url(../img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.control-panel {
+    position: relative;
+    z-index: 0;
+    margin: auto;
+    width: 730px;
+    height: 230px;
+    background-color: slategray;
+    opacity: 0.95;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: grey 2px 2px 20px 7px;
+}
+
+.control-top {
+    display: flex;
+    justify-content: center;
+}
+
+.leftside {
+    width: 150px;
+    padding: 10px;
+}
+
+.middle {
+    box-sizing: border-box;
+    width: 350px;
+}
+
+.rightside {
+    width: 150px;
+    padding: 10px;
+}
+
+.hint {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.hint div {
+    display: block;
+    width: 50px;
+    height: 20px;
+}
+
+.hinted-cell {
+    background-color: sandybrown;
+    opacity: 70%;
+}
+
+.smiley {
+    margin-left: 35px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: relative;
+    animation: floatBubble 1s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes floatBubble {
+    from {
+        top: 0;
+        animation-timing-function: ease-in;
+    }
+    to {
+        top: 5px;
+        animation-timing-function: ease-out;
+    }
+}
+
+button {
+    outline: none;
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    color: orange;
+    min-width: 100px;
+    border: double orange 3px;
+    background-color: transparent;
+    border-radius: 20%;
+    padding: 5px;
+    text-shadow: 2px 2px black;
+}
+
+.lives {
+    padding: 10px;
+    font-size: large;
+}
+
+.lives span {
+    display: inline-block;
+}
+
+.flagcounter {
+    display: block;
+    height: 22px;
+    width: 170px;
+    font-size: 18px;
+}
+
+.time {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.control-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.announce {
+    position: absolute;
+    bottom: 10px;
+    font-size: 30px;
+    color: orange;
+    text-shadow: 2px 2px black;
+}
+
+.gamecontainer {
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    min-height: 600px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+table {
+    z-index: 1;
+    border: 3px solid black;
+    border-collapse: collapse;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cell {
+    background-color: lightgray;
+    width: 35px;
+    height: 35px;
+    border: 1px solid darkslategrey;
+    transition: 0.2s
+}
+
+.cell::selection {
+    background-color: transparent;
+}
+
+.cell:hover {
+    background-color: orange;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.show-cell {
+    background-color: white;
+}
+
+.hide-cell {
+    display: none;
+}
+
+.lose {
+    background-color: red;
+}
+
+footer {
+    text-align: right;
+    background-color: darkslategrey;
+}
+
+.one {
+    color: green;
+    text-shadow: black 1px 1px 1px;
+}
+
+.two {
+    color: yellow;
+    text-shadow: black 1px 1px 1px;
+}
+
+.three {
+    color: orange;
+    text-shadow: black 1px 1px 1px;
+}
+
+.four {
+    color: red;
+    text-shadow: black 1px 1px 1px;
+}
+
+.safe {
+    animation: blink 0.5s linear infinite;
+}
+
+@keyframes blink {
+    50% {
+        background-color: yellow;
+    }
+}
