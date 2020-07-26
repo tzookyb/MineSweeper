@@ -11,14 +11,18 @@
 </head>
 
 <body>
-    <div class="flash"><button class="begin" onclick="removeFlash()">Enter the mine field</button></div>
+    <div class="flash"><button class="begin" onclick="hideFlash()">Enter the mine field</button></div>
     <div class="header">MineSweeper</div>
     <div class="main-container">
         <div class="control-panel">
             <div class="control-top">
                 <div class="leftside">
-                    <div class="hint"><img onclick="useHint()" width="60px" height="60px" src="img/hintoff.png" /><div class="hintcounter"></div></div>
-                    <div class="hint"><img onclick="safeClick()" width="50px" height="50px" src="img/safe.png" /><div class="safecounter"></div></div>
+                    <div class="hint"><img onclick="useHint()" width="60px" height="60px" src="img/hintoff.png" />
+                        <div class="hintcounter"></div>
+                    </div>
+                    <div class="hint"><img onclick="safeClick()" width="50px" height="50px" src="img/safe.png" />
+                        <div class="safecounter"></div>
+                    </div>
                     <div class="smiley"><img onclick="initGame(gSelectedLevel)" style="display:block" width="70px"
                             height="70px" src="img/scared.png" /></div>
                 </div>
@@ -27,7 +31,7 @@
                     <button onclick="initGame(2)">Medium</button>
                     <button onclick="initGame(3)">Expert</button>
                     <button onclick="initGame(4)">Manual Mode</button>
-                    <div class="lives"></div>
+                    <div class="lives"><span></span></div>
                 </div>
                 <div class="rightside">
                     <div class="time">Time:<br />0<br />Seconds</div><br />
@@ -36,7 +40,7 @@
                 </div>
             </div>
             <div class="control-bottom">
-                <div class="announce">To begin - choose game level</div>
+                <div class="msg">To begin - choose game level</div>
             </div>
         </div>
         <div class="gamecontainer">

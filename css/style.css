@@ -244,7 +244,7 @@ button {
     align-items: center;
 }
 
-.announce {
+.msg {
     position: absolute;
     bottom: 10px;
     font-size: 30px;
@@ -276,6 +276,12 @@ table {
     height: 35px;
     border: 1px solid darkslategrey;
     transition: 0.2s
+}
+
+.cell img {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .cell::selection {
